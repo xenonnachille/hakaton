@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Наш сайтик
+{% endblock %}
+
+{% block content %}
+<h1> <p> МЫ УМНИЧКИ</p></h1>
+у нас самый крутой проект
+<br>
+<br>
+<form class="d-flex" role="search">
+<input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+<button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<br>
+<br>
+<form action="our_model.php" method="post"> 
+    <p><input type="text" name="request" value="" >
+    <p><input type="submit" name="Отправить запрос">
+</form>
+{% endblock %}
+
