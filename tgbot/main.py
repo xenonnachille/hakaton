@@ -14,9 +14,7 @@ from aiogram.filters import CommandStart
 from aiogram.types import Message, KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-
-TOKEN = "7486950870:AAG_m1QUZOZHz0-gs56ov7Yh5OAOCmJIyik"
-
+from token import TOKEN
 
 dp = Dispatcher()
 

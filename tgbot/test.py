@@ -12,8 +12,7 @@ from aiogram.filters import CommandStart
 from aiogram.types import Message, KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-# Bot token can be obtained via https://t.me/BotFather
-TOKEN = "7486950870:AAG_m1QUZOZHz0-gs56ov7Yh5OAOCmJIyik"
+# Bot token can be obtained via https://t.me/BotFathers
 
 # All handlers should be attached to the Router (or Dispatcher)
 
