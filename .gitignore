@@ -1,2 +1,4 @@
 token.py
 *.txt
+*.Identifier
+*.pyc
