@@ -1,4 +1,4 @@
-token.py
+bot_token.py
 *.txt
 *.Identifier
 *.pyc

@@ -14,7 +14,8 @@ from aiogram.filters import CommandStart
 from aiogram.types import Message, KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from token import TOKEN
+from bot_token import TOKEN
+import requests
 
 dp = Dispatcher()
 
@@ -27,7 +28,9 @@ def log(user_name, text):
 
 is_log = True
 
-
+def get_answer(question, answer):
+    r = requests.get('http://127.0.0.1:8000/?fit={"question":"'+ f'{question}' +'", "answer":"' +f'{answer}' + '"}')
+    return r.text
 
 def replace_in_file(file_path, user_id, new_text):
     is_done = False
@@ -135,8 +138,12 @@ async def change_user_language(callback: CallbackQuery):
 
 
 @dp.message()
-async def language(message: Message):
+async def answer(message: Message):
     log(message.from_user.full_name, message.text)
+    data = message.text.split('\n')
+    if len(data) == 2:
+        answer = get_answer(data[0], data[1])
+        await message.answer(answer)
 
 async def main() -> None:
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
