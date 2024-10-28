@@ -1,9 +1,42 @@
 {% extends 'main/base.html' %}
+{% load static %}
+
 {% block title %}
 Страничка про нас
 {% endblock %}
 
 {% block content %}
-<h1> Страница про нас</h1>
-<p> просто текст</p>
+<h1> Ржавые гвозди</h1>
+<p> </p>
+
+<div style="display: flex; justify-content: space-around;">
+    <figure style="text-align: center;">
+        <img src="{% static 'images/xenonchik.jpg' %}" alt="Ксения Шевякова" style="width: 200px; height: 250px; object-fit: cover;">
+        <figcaption>Ксения Шевякова<br>Тимлид<br>Веб-разработчик</figcaption>
+    </figure>
+
+    <figure style="text-align: center;">
+        <img src="{% static 'images/marat (1).jpg' %}" alt="Марат Фаттахов" style="width: 200px; height: 250px; object-fit: cover;">
+        <figcaption>Марат Фаттахов<br>Специалист по машинному обучению</figcaption>
+    </figure>
+
+    <figure style="text-align: center;">
+        <img src="{% static 'images/nikitaa.jpg' %}" alt="Никита Юриков" style="width: 200px; height: 250px; object-fit: cover;">
+        <figcaption>Никита Юриков<br>Веб-разработчик<br>Специалист по машинному обучению</figcaption>
+    </figure>
+
+    <figure style="text-align: center;">
+        <img src="{% static 'images/sashaa.jpg' %}" alt="Александр Маракулин" style="width: 200px; height: 250px; object-fit: cover;">
+        <figcaption>Александр Маракулин<br>Специалист по работе с данными</figcaption>
+    </figure>
+</div>
+<br>
+<br>
+А вместе мы...
+
+<figure style="text-align: center;">
+    <img src="{% static 'images/team.jpg' %}" alt="Александр Маракулин" style="width: 250px; height: 250px; object-fit: cover;">
+    <figcaption>Наша команда за работой над проектом, <br> фото в цвете</figcaption>
+</figure>
+
 {% endblock %}
