@@ -9,34 +9,34 @@
 <h1> Ржавые гвозди</h1>
 <p> </p>
 
-<div style="display: flex; justify-content: space-around;">
+<div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 25px;"> <!-- Добавлено свойство gap для увеличения расстояния между картинками -->
     <figure style="text-align: center;">
-        <img src="{% static 'images/xenonchik.jpg' %}" alt="Ксения Шевякова" style="width: 200px; height: 250px; object-fit: cover;">
-        <figcaption>Ксения Шевякова<br>Тимлид<br>Веб-разработчик</figcaption>
+        <img src="{% static 'images/xenonchik.jpg' %}" alt="Ксения Шевякова" style="width: 300px; height: 350px; object-fit: cover;">
+        <figcaption style="margin-top: 10px;">Ксения Шевякова<br>Тимлид<br>Веб-разработчик</figcaption> <!-- Добавлен отступ сверху -->
     </figure>
 
     <figure style="text-align: center;">
-        <img src="{% static 'images/marat (1).jpg' %}" alt="Марат Фаттахов" style="width: 200px; height: 250px; object-fit: cover;">
-        <figcaption>Марат Фаттахов<br>Специалист по машинному обучению</figcaption>
+        <img src="{% static 'images/marat (1).jpg' %}" alt="Марат Фаттахов" style="width: 300px; height: 350px; object-fit: cover;">
+        <figcaption style="margin-top: 10px;">Марат Фаттахов<br>Специалист по машинному обучению</figcaption> <!-- Добавлен отступ сверху -->
     </figure>
 
     <figure style="text-align: center;">
-        <img src="{% static 'images/nikitaa.jpg' %}" alt="Никита Юриков" style="width: 200px; height: 250px; object-fit: cover;">
-        <figcaption>Никита Юриков<br>Веб-разработчик<br>Специалист по машинному обучению</figcaption>
+        <img src="{% static 'images/nikitaa.jpg' %}" alt="Никита Юриков" style="width: 300px; height: 350px; object-fit: cover;">
+        <figcaption style="margin-top: 10px;">Никита Юриков<br>Веб-разработчик<br>Специалист по машинному обучению</figcaption> <!-- Добавлен отступ сверху -->
     </figure>
 
     <figure style="text-align: center;">
-        <img src="{% static 'images/sashaa.jpg' %}" alt="Александр Маракулин" style="width: 200px; height: 250px; object-fit: cover;">
-        <figcaption>Александр Маракулин<br>Специалист по работе с данными</figcaption>
+        <img src="{% static 'images/sashaa.jpg' %}" alt="Александр Маракулин" style="width: 300px; height: 350px; object-fit: cover;">
+        <figcaption style="margin-top: 10px;">Александр Маракулин<br>Специалист по работе с данными</figcaption> <!-- Добавлен отступ сверху -->
     </figure>
 </div>
 <br>
 <br>
-А вместе мы...
+<h3>А вместе мы...</h3>
 
 <figure style="text-align: center;">
-    <img src="{% static 'images/team.jpg' %}" alt="Александр Маракулин" style="width: 250px; height: 250px; object-fit: cover;">
-    <figcaption>Наша команда за работой над проектом, <br> фото в цвете</figcaption>
+    <img src="{% static 'images/team.jpg' %}" alt="Александр Маракулин" style="width: 400px; height: 400px; object-fit: cover;">
+    <figcaption style="margin-top: 10px;">Наша команда за работой над проектом, <br> фото в цвете</figcaption> <!-- Добавлен отступ сверху -->
 </figure>
 
 {% endblock %}

@@ -1,15 +1,26 @@
 {% extends 'main/base.html' %}
+{% load static %}
+
 {% block title %}
 Наш сайтик
 {% endblock %}
 
 {% block content %}
 <h1> <p> Привет! Мы - команда "Ржавые гвозди" и это наш сайт для проекта от VK на хакатон ЦК МФТИ.</p></h1>
+<br>
 <h3> <p> Введите ваши вопрос и ответ в форму ниже, и наша модель выдаст вердикт: релевантен ответ вопросу или нет.</p></h3>
 <br>
 <br>
-<form class="d-flex" role="search">
-<input class="form-control me-2" type="text" placeholder="Введите ваши вопрос и ответ..." aria-label="Search">
-<button class="btn btn-white" type="submit">Искать</button>
+<form class="d-flex" role="search" method="post" action="">
+    {% csrf_token %} 
+    <input class="form-control me-2" type="text" name="question" placeholder="Введите ваш вопрос..." aria-label="Search">
+    <input class="form-control me-2" type="text" name="answer" placeholder="Введите ваш ответ..." aria-label="Search">
+    <button class="btn btn-white" type="submit">Ввести</button>
 </form>
+<br>
+<br>
+{% if result %}
+    <h2>Результат:</h2>
+    <p>{{ result }}</p>
+{% endif %}
 {% endblock %}
