@@ -1,0 +1,5 @@
+dropout_prob: 0.3
+learning_rate: 1.0e-05
+model_name: bert-base-multilingual-cased
+train_dataloader_size: 1645
+warmup_steps: 1500
