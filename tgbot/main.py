@@ -30,7 +30,7 @@ is_log = True
 
 def get_answer(question, answer):
     r = requests.get('http://127.0.0.1:8000/?fit={"question":"'+ f'{question}' +'", "answer":"' +f'{answer}' + '"}')
-    return r.text
+    return int(r.text)
 
 def replace_in_file(file_path, user_id, new_text):
     is_done = False
@@ -143,6 +143,10 @@ async def answer(message: Message):
     data = message.text.split('\n')
     if len(data) == 2:
         answer = get_answer(data[0], data[1])
+        if answer:
+            answer = 'Введенный вами ответ является релевантным для данного вопроса'
+        else:
+            answer = 'Введенный вами ответ не является релевантным для данного вопроса'
         await message.answer(answer)
 
 async def main() -> None:

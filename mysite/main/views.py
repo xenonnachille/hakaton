@@ -7,24 +7,23 @@ import json
 
 
 def foo(arguments):
-    # Логика, которую хотите выполнить
-    return fitted_model.predict([arguments['question'], arguments['answer']])
+    return fitted_model.get_result(arguments['question'], arguments['answer'])
 
 def index(request):
     if request.method == 'POST':
         question = request.POST.get('question')
         answer = request.POST.get('answer')
-        
-        # Создаем аргументы для функции foo
         arguments = {'question': question, 'answer': answer}
-        
-        # Вызываем функцию foo
         result = foo(arguments)
+        if result:
+            result = 'Введенный вами ответ является релевантным для данного вопроса'
+        else:
+            result = 'Введенный вами ответ не является релевантным для данного вопроса'
         return render(request, 'main/index.html', {'result': result})
     data = dict(request.GET)
     if 'fit' in data.keys():
         arguments = json.loads(str(data['fit'][0]))
-        return HttpResponse(fitted_model.predict([arguments['question'], arguments['answer']]))
+        return HttpResponse(fitted_model.get_result(arguments['question'], arguments['answer']))
     return render(request, 'main/index.html')
 
 def about(request):
