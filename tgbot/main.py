@@ -80,7 +80,7 @@ async def command_start_handler(message: Message) -> None:
     keyboard = ReplyKeyboardMarkup(keyboard=kb, resize_keyboard=True,)
     if is_log:
         log(message.from_user.full_name, message.text)
-    await message.answer(f"Hello, {html.bold(message.from_user.full_name)}!", reply_markup=keyboard)
+    await message.answer(f"{LANG[lang]['hello']}, {html.bold(message.from_user.full_name)}!", reply_markup=keyboard)
 
 
 
